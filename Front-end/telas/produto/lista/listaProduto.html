@@ -1,0 +1,32 @@
+<div>
+    <a class="btn btn-success btn-block" href="#!/cadProduto">Adicionar</a>
+    <a class="btn btn-danger btn-block" href="#!/login">Sair</a>
+    <br>
+    <input class="form-control" type="text" ng-model="busca" placeholder="O que voce está buscando?" />
+
+    <table ng-show="produtos.length > 0" class="table">
+        <tr>
+            <th>Código</th>
+            <th>Nome</th>
+            <th>Descrição</th>
+            <th>Início Orçamento</th>
+            <th>Fim Orçamento</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr ng-repeat="produto in produtos | filter:busca">
+            <td>{{produto.id}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{produto.descricao}}</td>
+            <td>{{produto.inicioOrcamento | date: 'dd/MM/yyyy'}}</td>
+            <td>{{produto.fimOrcamento | date: 'dd/MM/yyyy'}}</td>
+            <td>
+                <button class="btn btn-primary btn-block" ng-click="editar(produto)">Editar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger btn-block" ng-click="excluir(produto)">Excluir</button>
+            </td>
+        </tr>
+    </table>
+</div>

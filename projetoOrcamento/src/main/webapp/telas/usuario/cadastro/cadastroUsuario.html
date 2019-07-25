@@ -1,0 +1,52 @@
+<form class="jumbotron" name="myForm">
+
+    <h3>Cadastro Usuários</h3>
+    <br>
+
+    <div class="form-group">
+        <label for="inputNome">Nome</label>
+        <input class="form-control" type="text" name="nome" ng-model="usuario.nome" placeholder="Nome"
+            ng-required="true">
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputUsuario">Usuário</label>
+            <input class="form-control" type="text" name="usuario" ng-model="usuario.usuario" placeholder="Usuario"
+                ng-required="true">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputSenha">Senha</label>
+            <input class="form-control" type="password" name="senha" ng-model="usuario.senha" placeholder="Senha"
+                ng-required="true">
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="form-group col-md-6">
+            <label for="inputTelefone">Telefone</label>
+            <input class="form-control" type="text" name="telefone" ng-model="usuario.telefone" placeholder="Telefone"
+                ng-required="true">
+        </div>
+
+        <div class="form-group col-md-6">
+            <label for="inputEmail">Email</label>
+            <input class="form-control" type="text" name="email" ng-model="usuario.email" placeholder="E-mail"
+                ng-required="true">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="inputTipo">Tipo</label>
+        <select class="form-control" ng-model="usuario.tipo" ng-required="true">
+            <option value=""></option>
+            <option value="Usuario">Usuario</option>
+            <option value="Fornecedor">Fornecedor</option>
+        </select>
+    </div>
+
+    <button class="btn btn-primary btn-block" ng-click="salvar(usuario)" ng-disabled="myForm.$invalid">Salvar</button>
+    <a class="btn btn-danger btn-block" href="#!/login">Cancelar</a>
+
+</form>

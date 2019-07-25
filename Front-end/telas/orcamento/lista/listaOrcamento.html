@@ -1,0 +1,32 @@
+<div>
+    <a class="btn btn-success btn-block" style="align-items: right" href="#!/cadOrcamento">Adicionar</a>
+    <a class="btn btn-danger btn-block" href="#!/login">Sair</a>
+    <br>
+    <input class="form-control" type="text" ng-model="busca" placeholder="O que voce está buscando?" />
+
+    <table ng-show="orcamentos.length > 0" class="table">
+        <tr>
+            <th>Fornecedor</th>
+            <th>Telefone</th>
+            <th>Email</th>
+            <th>Produto</th>
+            <th>Valor</th>
+            <th></th>
+            <th></th>
+        </tr>
+
+        <tr ng-repeat="orcamento in orcamentos | filter:busca">
+            <td>{{usuario.nome}}</td>
+            <td>{{usuario.telefone}}</td>
+            <td>{{usuario.email}}</td>
+            <td>{{produto.nome}}</td>
+            <td>{{orcamento.valor}}</td>
+            <td>
+                <button class="btn btn-primary btn-block" ng-click="editar(orcamento)">Editar</button>
+            </td>
+            <td>
+                <button class="btn btn-danger btn-block" ng-click="excluir(orcamento)">Excluir</button>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,1 @@
+angular.module('ProjetoOrcamento', ['ngRoute','ngResource']);

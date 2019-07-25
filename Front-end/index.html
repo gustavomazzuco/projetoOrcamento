@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html ng-app="ProjetoOrcamento">
+
+<head>
+    <title>Produtos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- <nav class="navb>ar navbar-expand-md navbar-light bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item"><a class="nav-link" href="#!/home">Home</a></li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">Produto<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#!/cadProduto">Cadastro</a></li>
+                        <li><a class="dropdown-item" href="#!/listaProduto">Pesquisa</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button"
+                        aria-haspopup="true" aria-expanded="false">Orçamento<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#!/cadOrcamento">Cadastro</a></li>
+                        <li><a class="dropdown-item" href="#!/listaOrcamento">Pesquisa</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav> -->
+
+    <div class="jumbotron-fluid">
+        <div class="container">
+            <ng-view></ng-view>
+        </div>
+    </div>
+
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular/angular-route.min.js"></script>
+    <script src="lib/angular/angular-locale_pt-br.js"></script>
+    <script src="lib/angular/angular-resource.min.js"></script>
+    <link rel="stylesheet" href="css/app.css">
+    
+    <script src="app.js"></script>
+    <script src="rotas/rotas.js"></script>
+
+    <script src="telas/produto/produtoService.js"></script>
+    <script src="telas/produto/cadastro/cadastroProduto.js"></script>
+    <script src="telas/produto/lista/listarProdutos.js"></script>
+
+    <script src="telas/usuario/usuarioService.js"></script>
+    <script src="telas/usuario/cadastro/cadastroUsuario.js"></script>
+
+    <script src="telas/orcamento/orcamentoService.js"></script>
+    <script src="telas/orcamento/cadastro/cadastroOrcamento.js"></script>
+    <script src="telas/orcamento/lista/listaOrcamento.js"></script>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.0/js/bootstrap.min.js"></script>
+    <script language='JavaScript'>
+        function SomenteNumero(e) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58))
+                return true;
+            else {
+                return false;
+            }
+        }
+
+        function SomenteNumeroDecimal(e) {
+            var tecla = (window.event) ? event.keyCode : e.which;
+            if ((tecla > 47 && tecla < 58) || tecla == 46)
+                return true;
+            else {
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

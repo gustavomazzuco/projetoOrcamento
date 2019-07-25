@@ -1,0 +1,27 @@
+<h2>Orçamentos</h2>
+<form name="myForm">
+
+    <div class="form-group">
+        <label for="inputFornecedor">Fornecedor</label>
+        <select class="form-control" ng-model="orcamento.usuario"
+            ng-options="usuario.nome group by usuario.tipo for usuario in usuarios track by $index">
+            <option value="">Selecione o Fornecedor</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inputProduto">Produto</label>
+        <select class="form-control" ng-model="orcamento.produto" ng-options="produto.nome for produto in produtos track by $index">
+            <option value="">Selecione o Produto</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="inputValor">Valor</label>
+        <input class="form-control" type="text" name="valor" ng-model="orcamento.valor" placeholder="Valor">
+    </div>
+
+    <button class="btn btn-primary btn-block" ng-click="salvar(orcamento)" ng-disabled="myForm.$invalid">Salvar</button>
+    <a class="btn btn-danger btn-block" href="#!/listaOrcamento">Cancelar</a>
+
+</form>
